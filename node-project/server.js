@@ -31,7 +31,7 @@ const upload = multer({ storage: storage }); // Multer initialization
 
 // MongoDB Connection
 mongoose
-  .connect("mongodb://127.0.0.1:27017/valex_db")
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.log("❌ DB Connection Error:", err));
 
