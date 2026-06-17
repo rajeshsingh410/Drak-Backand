@@ -30,10 +30,16 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }); // Multer initialization
 
 // MongoDB Connection
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB Connected"))
-  .catch((err) => console.log("❌ DB Connection Error:", err));
+
+const mongoose = require("mongoose");
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("✅ MongoDB Connected");
+  })
+  .catch((err) => {
+    console.error("❌ MongoDB Error:", err);
+  });
 
 // Schema Definition
 const profileSchema = new mongoose.Schema({
