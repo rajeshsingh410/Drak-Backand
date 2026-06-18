@@ -31,7 +31,8 @@ const upload = multer({ storage: storage }); // Multer initialization
 
 // MongoDB Connection
 
-const mongoose = require("mongoose");
+
+// MongoDB Connection
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
