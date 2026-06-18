@@ -119,9 +119,7 @@ app.post("/api/profile/save", upload.single("profileImage"), async (req, res) =>
   }
 );
 
-app.get("/",async(req,res)=>{
-  res.json("server is running")
-}
+
 // 2. GET PROFILE ROUTE
 app.get("/api/profile/:email", async (req, res) => {
   try {
